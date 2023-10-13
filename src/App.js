@@ -43,7 +43,7 @@ const TableEditor = () => {
 
   const writeTableData = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/submit-table', {
+      const response = await fetch('https://boltzman.pythonanywhere.com/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,6 +58,7 @@ const TableEditor = () => {
         window.alert('Failed to send table data');
       }
     } catch (error) {
+      console.log(error)
       window.alert('Error:', error);
     }
   };
